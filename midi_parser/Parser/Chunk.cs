@@ -7,29 +7,37 @@ namespace midi_parser
 {
     class Chunk
     {
-        public int CT // 청크 유형
+        public Chunk(int ctype, int length, byte[] buffer)
         {
-            get => CT;
-            private set => CT = value;
+            CT = ctype;
+            Length = length;
+            Data = buffer;
+        }
+
+
+        public int CT //청크 유형
+        {
+            get;
+            private set;
         }
 
         public int Length //청크 길이
         {
-            get => Length;
-            private set => Length = value;
+            get;
+            private set;
         }
 
-        public byte[] Data // 데이터
+        public byte[] Data //데이터
         {
-            get => Data;
-            private set => Data = value;
+            get;
+            private set;
         }
 
-        public string CTString // 청크 유형 문자열
+        public string CTString //청크 유형(문자열)
         {
-            get => CTString;
-            private set => CTString = value;
+            get { return SF.GetString(CT); }
         }
+
 
         public static Chunk Parse(Stream stream)
         {
@@ -41,7 +49,7 @@ namespace midi_parser
 
                 length = SF.ConvertHostorder(length);
                 byte[] buffer = br.ReadBytes(length);
-                
+
                 return new Chunk(ctype, length, buffer);
             }
             catch (Exception e)
@@ -49,13 +57,6 @@ namespace midi_parser
                 Console.WriteLine(e);
                 return null;
             }
-        }
-
-        public Chunk(int ctype, int length, byte[] buffer)
-        {
-            CT = ctype;
-            Length = length;
-            Data = buffer;
         }
     }
 }
