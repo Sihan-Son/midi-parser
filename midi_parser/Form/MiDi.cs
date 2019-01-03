@@ -34,9 +34,7 @@ namespace midi_parser
                 this.filePath.Text = opd.FileName;
             }
             
-            string[] name = filePath.Text.Split('\\');
-            var pathLength = name.Length;
-            File.Text = name[pathLength - 1];
+            File.Text = filePath.Text.Split('\\').Last();
 
         }
 
