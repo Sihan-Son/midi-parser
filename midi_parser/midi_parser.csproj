@@ -34,11 +34,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form\Form1.cs">
+    <Compile Include="Form\MiDi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Form\MiDi.Designer.cs">
+      <DependentUpon>MiDi.cs</DependentUpon>
     </Compile>
     <Compile Include="Parser\Chunk.cs" />
     <Compile Include="Parser\Program.cs" />
