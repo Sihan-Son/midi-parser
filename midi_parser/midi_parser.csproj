@@ -34,14 +34,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chunk.cs" />
-    <Compile Include="Class1.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Form\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Form\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Parser\Chunk.cs" />
+    <Compile Include="Parser\Program.cs" />
+    <Compile Include="Parser\StaticFunc.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -51,8 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="example.mid" />
-    <Content Include="moz_sleep.mid" />
+    <Content Include="midi\example.mid" />
+    <Content Include="midi\moz_sleep.mid" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
