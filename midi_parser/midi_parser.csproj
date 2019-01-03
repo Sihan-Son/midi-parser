@@ -55,5 +55,10 @@
     <Content Include="midi\example.mid" />
     <Content Include="midi\moz_sleep.mid" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form\MiDi.resx">
+      <DependentUpon>MiDi.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
