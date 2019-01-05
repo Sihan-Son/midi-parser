@@ -58,5 +58,21 @@ namespace midi_parser
                 return null;
             }
         }
+
+        public byte[] Buffer
+        {
+            get
+            {
+                byte[] ct_buf = BitConverter.GetBytes(CT);
+                int belen = SF.ConvertHostorder(Length);
+                byte[] len_buf = BitConverter.GetBytes(belen);
+                byte[] buffer = new byte[ct_buf.Length + len_buf.Length + Data.Length];
+                Array.Copy(ct_buf, buffer, ct_buf.Length);
+                Array.Copy(len_buf, 0, buffer, ct_buf.Length, len_buf.Length);
+                Array.Copy(Data, 0, buffer, ct_buf.Length + len_buf.Length, Data.Length);
+                
+                return buffer;
+            }
+        }
     }
 }
