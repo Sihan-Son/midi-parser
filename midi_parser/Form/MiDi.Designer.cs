@@ -33,7 +33,7 @@
             this.filePath = new System.Windows.Forms.TextBox();
             this.fnBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.File = new System.Windows.Forms.TextBox();
+            this.fileName = new System.Windows.Forms.TextBox();
             this.btnRun = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -78,11 +78,11 @@
             // 
             // File
             // 
-            this.File.Location = new System.Drawing.Point(80, 45);
-            this.File.Name = "File";
-            this.File.ReadOnly = true;
-            this.File.Size = new System.Drawing.Size(111, 21);
-            this.File.TabIndex = 5;
+            this.fileName.Location = new System.Drawing.Point(80, 45);
+            this.fileName.Name = "fileName";
+            this.fileName.ReadOnly = true;
+            this.fileName.Size = new System.Drawing.Size(111, 21);
+            this.fileName.TabIndex = 5;
             // 
             // btnRun
             // 
@@ -100,7 +100,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 301);
             this.Controls.Add(this.btnRun);
-            this.Controls.Add(this.File);
+            this.Controls.Add(this.fileName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.fnBtn);
             this.Controls.Add(this.filePath);
@@ -121,7 +121,7 @@
         private System.Windows.Forms.TextBox filePath;
         private System.Windows.Forms.Button fnBtn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox File;
+        private System.Windows.Forms.TextBox fileName;
         private System.Windows.Forms.Button btnRun;
     }
 }
