@@ -5,7 +5,7 @@ using SF = midi_parser.StaticFunc;
 
 namespace midi_parser
 {
-    class Chunk
+    public class Chunk
     {
         public Chunk(int ctype, int length, byte[] buffer)
         {
