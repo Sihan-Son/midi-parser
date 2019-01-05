@@ -13,9 +13,35 @@ namespace midi_parser
             return en.GetString(data);
         }
 
+      
+        public static short ConvertHostorderS(byte[] data, int offset)
+        {
+            return (short) ConvertHostorder(BitConverter.ToInt16(data, offset));
+        }
+        
         public static int ConvertHostorder(int data)
         {
             return IPAddress.NetworkToHostOrder(data);
         }
+
+        
+        public static int ConvertHostorder(short data)
+        {
+            return IPAddress.NetworkToHostOrder(data);
+        }
+        
+        
+        public static string HexaString(byte[] buffer)
+        {
+            string str = "";
+
+            foreach (byte d in buffer)
+            {
+                str += string.Format("{0:X2} ", d);
+            }
+
+            return str;
+        }
+        
     }
 }
