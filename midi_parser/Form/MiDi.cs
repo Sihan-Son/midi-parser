@@ -54,7 +54,6 @@ namespace midi_parser
 
                     if (chunk is Header)
                     {
-                        Console.WriteLine("in");
                         var headerContents = ViewHeader(chunk as Header);
                         text += headerContents;
                     }
