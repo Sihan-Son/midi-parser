@@ -41,6 +41,7 @@
       <DependentUpon>MiDi.cs</DependentUpon>
     </Compile>
     <Compile Include="Parser\Chunk.cs" />
+    <Compile Include="Parser\Header.cs" />
     <Compile Include="Parser\Program.cs" />
     <Compile Include="Parser\StaticFunc.cs" />
   </ItemGroup>
