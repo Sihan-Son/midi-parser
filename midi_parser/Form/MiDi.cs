@@ -51,10 +51,37 @@ namespace midi_parser
                 if (chunk != null)
                 {
                     text += string.Format("{0} :{1} bytes \r\n", chunk.CTString, chunk.Length);
+
+                    if (chunk is Header)
+                    {
+                        Console.WriteLine("in");
+                        var headerContents = ViewHeader(chunk as Header);
+                        text += headerContents;
+                    }
                 }
             }
             Console.Write(text);
             midiText.AppendText(text);
+        }
+
+
+        private static string ViewHeader(Header header)
+        {
+            string[] content = new string[5]; 
+            content[0] = "\r\n===Header Chunk===\r\n";
+            content[1] = string.Format(StaticFunc.HexaString(header.Buffer) + "\r\n");
+            content[2] = string.Format("Format: {0}\r\n", header.Format);
+            content[3] = string.Format("Tracks: {0}\r\n", header.TrackCount);
+            content[4] = string.Format("Division: {0}\r\n", header.Division);
+
+            var contents = "";
+            
+            for (var i = 0; i < 5; i++)
+            {
+                contents += content[i];
+            }
+            
+            return contents+"\r\n";
         }
     }
 }
