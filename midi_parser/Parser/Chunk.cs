@@ -50,6 +50,11 @@ namespace midi_parser
                 length = SF.ConvertHostorder(length);
                 byte[] buffer = br.ReadBytes(length);
 
+                switch (SF.ConvertHostorder(ctype))
+                {
+                    case 0x4d546864: return new Header(ctype, length, buffer);
+                }
+
                 return new Chunk(ctype, length, buffer);
             }
             catch (Exception e)
