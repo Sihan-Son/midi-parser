@@ -8,11 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
+
 
 namespace midi_parser
 {
     public partial class Midi : Form
     {
+        WindowsMediaPlayer midiPlayer = new WindowsMediaPlayer();
+
         public Midi()
         {
             InitializeComponent();
@@ -81,6 +85,25 @@ namespace midi_parser
             }
             
             return contents+"\r\n";
+        }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+           
+            midiPlayer.URL = filePath.Text;
+            try
+            {
+                midiPlayer.controls.play();
+            }
+            catch (Exception)
+            {
+                midiText.AppendText("error");
+            }
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            midiPlayer.controls.stop();
         }
     }
 }
