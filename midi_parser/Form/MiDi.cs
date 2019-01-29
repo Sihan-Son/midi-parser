@@ -65,6 +65,8 @@ namespace midi_parser
             }
             Console.Write(text);
             midiText.AppendText(text);
+            
+            fs.Close();
         }
 
 
@@ -104,6 +106,12 @@ namespace midi_parser
         private void btnStop_Click(object sender, EventArgs e)
         {
             midiPlayer.controls.stop();
+            midiPlayer.close();
+        }
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+            midiPlayer.controls.pause();
         }
     }
 }

@@ -38,6 +38,7 @@
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.btnPause = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,7 +103,7 @@
             // 
             this.btnPlay.Location = new System.Drawing.Point(15, 347);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(99, 39);
+            this.btnPlay.Size = new System.Drawing.Size(80, 39);
             this.btnPlay.TabIndex = 7;
             this.btnPlay.Text = "PLAY";
             this.btnPlay.UseVisualStyleBackColor = true;
@@ -110,9 +111,9 @@
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(174, 347);
+            this.btnStop.Location = new System.Drawing.Point(193, 347);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(99, 39);
+            this.btnStop.Size = new System.Drawing.Size(80, 39);
             this.btnStop.TabIndex = 8;
             this.btnStop.Text = "STOP";
             this.btnStop.UseVisualStyleBackColor = true;
@@ -125,11 +126,22 @@
             this.trackBar1.Size = new System.Drawing.Size(258, 45);
             this.trackBar1.TabIndex = 9;
             // 
+            // btnPause
+            // 
+            this.btnPause.Location = new System.Drawing.Point(101, 347);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(86, 39);
+            this.btnPause.TabIndex = 10;
+            this.btnPause.Text = "PAUSE";
+            this.btnPause.UseVisualStyleBackColor = true;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
+            // 
             // Midi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 390);
+            this.Controls.Add(this.btnPause);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnPlay);
@@ -161,5 +173,6 @@
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Button btnPause;
     }
 }
