@@ -110,6 +110,7 @@ namespace midi_parser
         {
             playFlag = 0;
             midiPlayer.controls.stop();
+            currentTime = 0;
             midiPlayer.close();
         }
 
@@ -118,6 +119,7 @@ namespace midi_parser
             playFlag = 0;
             currentTime = midiPlayer.controls.currentPosition;
             midiPlayer.controls.pause();
+            midiPlayer.close();
         }
     }
 }

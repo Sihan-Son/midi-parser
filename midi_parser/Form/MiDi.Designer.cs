@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Midi));
             this.midiText = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.filePath = new System.Windows.Forms.TextBox();
@@ -101,21 +102,21 @@
             // 
             // btnPlay
             // 
+            this.btnPlay.Image = ((System.Drawing.Image)(resources.GetObject("btnPlay.Image")));
             this.btnPlay.Location = new System.Drawing.Point(15, 347);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(80, 39);
             this.btnPlay.TabIndex = 7;
-            this.btnPlay.Text = "PLAY";
             this.btnPlay.UseVisualStyleBackColor = true;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
             // btnStop
             // 
+            this.btnStop.Image = ((System.Drawing.Image)(resources.GetObject("btnStop.Image")));
             this.btnStop.Location = new System.Drawing.Point(193, 347);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(80, 39);
             this.btnStop.TabIndex = 8;
-            this.btnStop.Text = "STOP";
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
@@ -131,11 +132,11 @@
             // 
             // btnPause
             // 
+            this.btnPause.Image = ((System.Drawing.Image)(resources.GetObject("btnPause.Image")));
             this.btnPause.Location = new System.Drawing.Point(101, 347);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(86, 39);
             this.btnPause.TabIndex = 10;
-            this.btnPause.Text = "PAUSE";
             this.btnPause.UseVisualStyleBackColor = true;
             this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
             // 
