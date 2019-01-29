@@ -37,9 +37,9 @@
             this.btnRun = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.tbPlayTime = new System.Windows.Forms.TrackBar();
             this.btnPause = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPlayTime)).BeginInit();
             this.SuspendLayout();
             // 
             // midiText
@@ -121,10 +121,10 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(15, 296);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(258, 45);
-            this.trackBar1.TabIndex = 9;
+            this.tbPlayTime.Location = new System.Drawing.Point(15, 296);
+            this.tbPlayTime.Name = "tbPlayTime";
+            this.tbPlayTime.Size = new System.Drawing.Size(258, 45);
+            this.tbPlayTime.TabIndex = 9;
             // 
             // btnPause
             // 
@@ -142,7 +142,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 390);
             this.Controls.Add(this.btnPause);
-            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.tbPlayTime);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.btnRun);
@@ -155,7 +155,7 @@
             this.Name = "Midi";
             this.Text = "MIDI";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPlayTime)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,7 +172,7 @@
         private System.Windows.Forms.Button btnRun;
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnStop;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar tbPlayTime;
         private System.Windows.Forms.Button btnPause;
     }
 }
