@@ -119,12 +119,15 @@
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
-            // trackBar1
+            // tbPlayTime
             // 
             this.tbPlayTime.Location = new System.Drawing.Point(15, 296);
+            this.tbPlayTime.Maximum = 100;
             this.tbPlayTime.Name = "tbPlayTime";
             this.tbPlayTime.Size = new System.Drawing.Size(258, 45);
             this.tbPlayTime.TabIndex = 9;
+            this.tbPlayTime.TickFrequency = 0;
+            this.tbPlayTime.TickStyle = System.Windows.Forms.TickStyle.None;
             // 
             // btnPause
             // 

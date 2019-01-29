@@ -16,6 +16,7 @@ namespace midi_parser
     public partial class Midi : Form
     {
         WindowsMediaPlayer midiPlayer = new WindowsMediaPlayer();
+        Timer timer = new Timer();
 
         public Midi()
         {
@@ -24,6 +25,7 @@ namespace midi_parser
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            timer.Interval = 1000;
         }
 
         private void fnBtn_Click(object sender, EventArgs e)
@@ -40,6 +42,7 @@ namespace midi_parser
                 this.filePath.Text = opd.FileName; // set file path 
                 midiPlayer.URL = filePath.Text; // set wmp's file path
                 this.tbPlayTime.Maximum = Convert.ToInt32(midiPlayer.currentMedia.duration);
+                midiPlayer.close();
             }
 
             fileName.Text =
@@ -79,7 +82,7 @@ namespace midi_parser
         {
             string contents = "\r\n===Header Chunk===\r\n";
             contents += string.Format(StaticFunc.HexaString(header.Buffer) + "\r\n");
-            contents +=  string.Format("Format: {0}\r\n", header.Format);
+            contents += string.Format("Format: {0}\r\n", header.Format);
             contents += string.Format("Tracks: {0}\r\n", header.TrackCount);
             contents += string.Format("Division: {0}\r\n", header.Division);
 
@@ -88,9 +91,10 @@ namespace midi_parser
 
 
         private double currentTime;
-
+        private int playFlag = 0;
         private void btnPlay_Click(object sender, EventArgs e)
         {
+            playFlag = 1;
             midiPlayer.controls.currentPosition = currentTime;
             try
             {
@@ -104,12 +108,14 @@ namespace midi_parser
 
         private void btnStop_Click(object sender, EventArgs e)
         {
+            playFlag = 0;
             midiPlayer.controls.stop();
             midiPlayer.close();
         }
 
         private void btnPause_Click(object sender, EventArgs e)
         {
+            playFlag = 0;
             currentTime = midiPlayer.controls.currentPosition;
             midiPlayer.controls.pause();
         }
