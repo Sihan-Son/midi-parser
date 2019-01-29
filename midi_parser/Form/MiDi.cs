@@ -77,19 +77,11 @@ namespace midi_parser
 
         private static string ViewHeader(Header header)
         {
-            string[] content = new string[5];
-            content[0] = "\r\n===Header Chunk===\r\n";
-            content[1] = string.Format(StaticFunc.HexaString(header.Buffer) + "\r\n");
-            content[2] = string.Format("Format: {0}\r\n", header.Format);
-            content[3] = string.Format("Tracks: {0}\r\n", header.TrackCount);
-            content[4] = string.Format("Division: {0}\r\n", header.Division);
-
-            var contents = "";
-
-            for (var i = 0; i < 5; i++)
-            {
-                contents += content[i];
-            }
+            string contents = "\r\n===Header Chunk===\r\n";
+            contents += string.Format(StaticFunc.HexaString(header.Buffer) + "\r\n");
+            contents +=  string.Format("Format: {0}\r\n", header.Format);
+            contents += string.Format("Tracks: {0}\r\n", header.TrackCount);
+            contents += string.Format("Division: {0}\r\n", header.Division);
 
             return contents + "\r\n";
         }
