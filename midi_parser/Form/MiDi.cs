@@ -52,7 +52,7 @@ namespace midi_parser
 
         private void btnRun_Click(object sender, EventArgs e)
         {
-            FileStream fs = new FileStream(this.filePath.Text, FileMode.Open);
+            FileStream fs = new FileStream(this.filePath.Text, FileMode.Open); // get filestream for parse midi to hexa
 
             var text = "";
             while (fs.Position < fs.Length)
@@ -74,7 +74,7 @@ namespace midi_parser
             Console.Write(text);
             midiText.AppendText(text);
 
-            fs.Close();
+            fs.Close(); // close stream
         }
 
 
@@ -90,7 +90,7 @@ namespace midi_parser
         }
 
 
-        private double currentTime;
+        private double currentTime; // current play time
         private int playFlag = 0;
         private void btnPlay_Click(object sender, EventArgs e)
         {
@@ -111,7 +111,7 @@ namespace midi_parser
             playFlag = 0;
             midiPlayer.controls.stop();
             currentTime = 0;
-            midiPlayer.close();
+            midiPlayer.close(); // 파일 점유 해제
         }
 
         private void btnPause_Click(object sender, EventArgs e)
@@ -119,7 +119,9 @@ namespace midi_parser
             playFlag = 0;
             currentTime = midiPlayer.controls.currentPosition;
             midiPlayer.controls.pause();
-            midiPlayer.close();
+            midiPlayer.close(); // 파일 점유 해제
         }
+        
+        
     }
 }
