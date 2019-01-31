@@ -38,9 +38,7 @@
             this.btnRun = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
-            this.tbPlayTime = new System.Windows.Forms.TrackBar();
             this.btnPause = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.tbPlayTime)).BeginInit();
             this.SuspendLayout();
             // 
             // midiText
@@ -103,7 +101,7 @@
             // btnPlay
             // 
             this.btnPlay.Image = ((System.Drawing.Image)(resources.GetObject("btnPlay.Image")));
-            this.btnPlay.Location = new System.Drawing.Point(15, 347);
+            this.btnPlay.Location = new System.Drawing.Point(14, 307);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(80, 39);
             this.btnPlay.TabIndex = 7;
@@ -113,27 +111,17 @@
             // btnStop
             // 
             this.btnStop.Image = ((System.Drawing.Image)(resources.GetObject("btnStop.Image")));
-            this.btnStop.Location = new System.Drawing.Point(193, 347);
+            this.btnStop.Location = new System.Drawing.Point(193, 307);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(80, 39);
             this.btnStop.TabIndex = 8;
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
-            // tbPlayTime
-            // 
-            this.tbPlayTime.Location = new System.Drawing.Point(15, 296);
-            this.tbPlayTime.Maximum = 100;
-            this.tbPlayTime.Name = "tbPlayTime";
-            this.tbPlayTime.Size = new System.Drawing.Size(258, 45);
-            this.tbPlayTime.TabIndex = 9;
-            this.tbPlayTime.TickFrequency = 0;
-            this.tbPlayTime.TickStyle = System.Windows.Forms.TickStyle.None;
-            // 
             // btnPause
             // 
             this.btnPause.Image = ((System.Drawing.Image)(resources.GetObject("btnPause.Image")));
-            this.btnPause.Location = new System.Drawing.Point(101, 347);
+            this.btnPause.Location = new System.Drawing.Point(102, 307);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(86, 39);
             this.btnPause.TabIndex = 10;
@@ -144,9 +132,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 390);
+            this.ClientSize = new System.Drawing.Size(284, 360);
             this.Controls.Add(this.btnPause);
-            this.Controls.Add(this.tbPlayTime);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.btnRun);
@@ -159,7 +146,6 @@
             this.Name = "Midi";
             this.Text = "MIDI";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tbPlayTime)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,7 +162,6 @@
         private System.Windows.Forms.Button btnRun;
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnStop;
-        private System.Windows.Forms.TrackBar tbPlayTime;
         private System.Windows.Forms.Button btnPause;
     }
 }
