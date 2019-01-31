@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Midi));
             this.midiText = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.filePath = new System.Windows.Forms.TextBox();
@@ -35,6 +36,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.fileName = new System.Windows.Forms.TextBox();
             this.btnRun = new System.Windows.Forms.Button();
+            this.btnPlay = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnPause = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // midiText
@@ -76,7 +80,7 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "File Name";
             // 
-            // File
+            // fileName
             // 
             this.fileName.Location = new System.Drawing.Point(80, 45);
             this.fileName.Name = "fileName";
@@ -94,11 +98,44 @@
             this.btnRun.UseVisualStyleBackColor = true;
             this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
+            // btnPlay
+            // 
+            this.btnPlay.Image = ((System.Drawing.Image)(resources.GetObject("btnPlay.Image")));
+            this.btnPlay.Location = new System.Drawing.Point(14, 307);
+            this.btnPlay.Name = "btnPlay";
+            this.btnPlay.Size = new System.Drawing.Size(80, 39);
+            this.btnPlay.TabIndex = 7;
+            this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
+            // 
+            // btnStop
+            // 
+            this.btnStop.Image = ((System.Drawing.Image)(resources.GetObject("btnStop.Image")));
+            this.btnStop.Location = new System.Drawing.Point(193, 307);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(80, 39);
+            this.btnStop.TabIndex = 8;
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // btnPause
+            // 
+            this.btnPause.Image = ((System.Drawing.Image)(resources.GetObject("btnPause.Image")));
+            this.btnPause.Location = new System.Drawing.Point(102, 307);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(86, 39);
+            this.btnPause.TabIndex = 10;
+            this.btnPause.UseVisualStyleBackColor = true;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
+            // 
             // Midi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 301);
+            this.ClientSize = new System.Drawing.Size(284, 360);
+            this.Controls.Add(this.btnPause);
+            this.Controls.Add(this.btnStop);
+            this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.btnRun);
             this.Controls.Add(this.fileName);
             this.Controls.Add(this.label1);
@@ -123,5 +160,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox fileName;
         private System.Windows.Forms.Button btnRun;
+        private System.Windows.Forms.Button btnPlay;
+        private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button btnPause;
     }
 }
