@@ -41,7 +41,6 @@ namespace midi_parser
             {
                 this.filePath.Text = opd.FileName; // set file path 
                 midiPlayer.URL = filePath.Text; // set wmp's file path
-                this.tbPlayTime.Maximum = Convert.ToInt32(midiPlayer.currentMedia.duration);
                 midiPlayer.close();
             }
 
@@ -121,7 +120,6 @@ namespace midi_parser
             midiPlayer.controls.pause();
             midiPlayer.close(); // 파일 점유 해제
         }
-        
         
     }
 }
