@@ -123,6 +123,10 @@ namespace midi_parser
             midiPlayer.controls.pause();
             midiPlayer.close(); // 파일 점유 해제
         }
-        
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            midiText.Clear();
+        }
     }
 }

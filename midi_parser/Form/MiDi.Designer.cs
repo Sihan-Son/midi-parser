@@ -39,15 +39,16 @@
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // midiText
             // 
-            this.midiText.Location = new System.Drawing.Point(14, 82);
+            this.midiText.Location = new System.Drawing.Point(14, 74);
             this.midiText.Multiline = true;
             this.midiText.Name = "midiText";
             this.midiText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.midiText.Size = new System.Drawing.Size(259, 208);
+            this.midiText.Size = new System.Drawing.Size(290, 417);
             this.midiText.TabIndex = 0;
             // 
             // openFileDialog1
@@ -58,12 +59,12 @@
             // 
             this.filePath.Location = new System.Drawing.Point(13, 13);
             this.filePath.Name = "filePath";
-            this.filePath.Size = new System.Drawing.Size(178, 21);
+            this.filePath.Size = new System.Drawing.Size(210, 21);
             this.filePath.TabIndex = 2;
             // 
             // fnBtn
             // 
-            this.fnBtn.Location = new System.Drawing.Point(198, 13);
+            this.fnBtn.Location = new System.Drawing.Point(229, 11);
             this.fnBtn.Name = "fnBtn";
             this.fnBtn.Size = new System.Drawing.Size(75, 23);
             this.fnBtn.TabIndex = 3;
@@ -85,12 +86,12 @@
             this.fileName.Location = new System.Drawing.Point(80, 45);
             this.fileName.Name = "fileName";
             this.fileName.ReadOnly = true;
-            this.fileName.Size = new System.Drawing.Size(111, 21);
+            this.fileName.Size = new System.Drawing.Size(143, 21);
             this.fileName.TabIndex = 5;
             // 
             // btnRun
             // 
-            this.btnRun.Location = new System.Drawing.Point(198, 45);
+            this.btnRun.Location = new System.Drawing.Point(229, 45);
             this.btnRun.Name = "btnRun";
             this.btnRun.Size = new System.Drawing.Size(75, 23);
             this.btnRun.TabIndex = 6;
@@ -101,9 +102,9 @@
             // btnPlay
             // 
             this.btnPlay.Image = ((System.Drawing.Image)(resources.GetObject("btnPlay.Image")));
-            this.btnPlay.Location = new System.Drawing.Point(14, 307);
+            this.btnPlay.Location = new System.Drawing.Point(13, 497);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(80, 39);
+            this.btnPlay.Size = new System.Drawing.Size(67, 39);
             this.btnPlay.TabIndex = 7;
             this.btnPlay.UseVisualStyleBackColor = true;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
@@ -111,28 +112,39 @@
             // btnStop
             // 
             this.btnStop.Image = ((System.Drawing.Image)(resources.GetObject("btnStop.Image")));
-            this.btnStop.Location = new System.Drawing.Point(193, 307);
+            this.btnStop.Location = new System.Drawing.Point(163, 497);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(80, 39);
-            this.btnStop.TabIndex = 8;
+            this.btnStop.Size = new System.Drawing.Size(67, 39);
+            this.btnStop.TabIndex = 9;
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // btnPause
             // 
             this.btnPause.Image = ((System.Drawing.Image)(resources.GetObject("btnPause.Image")));
-            this.btnPause.Location = new System.Drawing.Point(102, 307);
+            this.btnPause.Location = new System.Drawing.Point(89, 497);
             this.btnPause.Name = "btnPause";
-            this.btnPause.Size = new System.Drawing.Size(86, 39);
-            this.btnPause.TabIndex = 10;
+            this.btnPause.Size = new System.Drawing.Size(67, 39);
+            this.btnPause.TabIndex = 8;
             this.btnPause.UseVisualStyleBackColor = true;
             this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
+            this.btnClear.Location = new System.Drawing.Point(237, 497);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(67, 39);
+            this.btnClear.TabIndex = 10;
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // Midi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 360);
+            this.ClientSize = new System.Drawing.Size(316, 548);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnPause);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnPlay);
@@ -163,5 +175,6 @@
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnPause;
+        private System.Windows.Forms.Button btnClear;
     }
 }
