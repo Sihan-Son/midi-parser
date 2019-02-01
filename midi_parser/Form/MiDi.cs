@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Author: SIHAN
+// Email: sihan830@gmail.com
+// GitHub: github.com/sihan830
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +13,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
-
 
 namespace midi_parser
 {

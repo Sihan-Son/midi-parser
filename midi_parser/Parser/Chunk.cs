@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Author: SIHAN
+// Email: sihan830@gmail.com
+// GitHub: github.com/sihan830
+
+using System;
 using System.IO;
 using System.Net;
 using SF = midi_parser.StaticFunc;

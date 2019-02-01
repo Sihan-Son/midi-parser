@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Author: SIHAN
+// Email: sihan830@gmail.com
+// GitHub: github.com/sihan830
+
+using System;
 using System.Net;
 using System.Text;
 

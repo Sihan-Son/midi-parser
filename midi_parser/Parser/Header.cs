@@ -1,3 +1,7 @@
+// Author: SIHAN
+// Email: sihan830@gmail.com
+// GitHub: github.com/sihan830
+
 namespace midi_parser
 {
     public class Header:Chunk
