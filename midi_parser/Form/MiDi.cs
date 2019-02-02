@@ -57,6 +57,9 @@ namespace midi_parser
             FileStream fs = new FileStream(this.filePath.Text, FileMode.Open); // get filestream for parse midi to hexa
 
             var text = "";
+            string musicHexa = "";
+            List<string> HexaNotes = new List<string>();
+
             while (fs.Position < fs.Length)
             {
                 Chunk chunk = Chunk.Parse(fs);
@@ -64,6 +67,15 @@ namespace midi_parser
                 if (chunk != null)
                 {
                     text += string.Format("{0} :{1} bytes \r\n", chunk.CTString, chunk.Length);
+
+                    musicHexa = StaticFunc.HexaString(chunk.Buffer);
+
+                    var NH = StaticFunc.NoteToHexa(musicHexa.Trim());
+
+                    for (var i = 0; i < NH.Length; i++)
+                    {
+                        HexaNotes.Add(NH[i]);
+                    }
 
                     if (chunk is Header)
                     {
@@ -73,7 +85,18 @@ namespace midi_parser
                 }
             }
 
-            Console.Write(text);
+            
+            
+            for (var i = 0; i < HexaNotes.Count; i++)
+            {
+                Console.Write("{0} ", HexaNotes[i]);
+
+                if ((i + 1) % 14 == 0)
+                {
+                    Console.WriteLine();
+                }
+            }
+
             midiText.AppendText(text);
 
             fs.Close(); // close stream
@@ -94,6 +117,7 @@ namespace midi_parser
 
         private double currentTime; // current play time
         private int playFlag = 0;
+
         private void btnPlay_Click(object sender, EventArgs e)
         {
             playFlag = 1;

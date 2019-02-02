@@ -18,7 +18,7 @@ namespace midi_parser
         }
 
       
-        public static short ConvertHostorderS(byte[] data, int offset)
+        public static short ShortConvertHostorder(byte[] data, int offset)
         {
             return (short) ConvertHostorder(BitConverter.ToInt16(data, offset));
         }
@@ -46,6 +46,14 @@ namespace midi_parser
 
             return str;
         }
+
+        public static string[] NoteToHexa(string notes)
+        {
+            string[] Hexa = notes.Split(' '); 
+
+            return Hexa;
+        }
+        
         
     }
 }
