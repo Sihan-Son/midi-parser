@@ -155,6 +155,8 @@
             this.Controls.Add(this.filePath);
             this.Controls.Add(this.midiText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Midi";
             this.Text = "MIDI";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -85,19 +85,22 @@ namespace midi_parser
                 }
             }
 
-            
-            
-            for (var i = 0; i < HexaNotes.Count; i++)
-            {
-                Console.Write("{0} ", HexaNotes[i]);
-
-                if ((i + 1) % 14 == 0)
-                {
-                    Console.WriteLine();
-                }
-            }
-
             midiText.AppendText(text);
+
+//            string notesBody = "\r\n";            
+//            for (var i = 0; i < HexaNotes.Count; i++)
+//            {
+//                Console.Write("{0:X2} ", HexaNotes[i]);
+//                notesBody += string.Format("{0:X2} ", HexaNotes[i]);
+//
+//                if ((i + 1) % 14 == 0)
+//                {
+//                    Console.WriteLine();
+//                    notesBody += "\r\n";
+//                }
+//            }
+            
+//            midiText.AppendText(notesBody);
 
             fs.Close(); // close stream
         }
