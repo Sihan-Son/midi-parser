@@ -99,8 +99,12 @@ namespace midi_parser
 //                    notesBody += "\r\n";
 //                }
 //            }
-            
+
 //            midiText.AppendText(notesBody);
+
+            int[] histogram = StaticFunc.Histogram(HexaNotes);
+            for (var i = 0; i < histogram.Length; i++)
+                Console.WriteLine(histogram[i]);
 
             fs.Close(); // close stream
         }
