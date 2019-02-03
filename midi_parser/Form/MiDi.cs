@@ -18,6 +18,9 @@ namespace midi_parser
 {
     public partial class Midi : Form
     {
+        public int[] histogram = new int[256];
+        public List<string> HexaNotes = new List<string>();
+        
         WindowsMediaPlayer midiPlayer = new WindowsMediaPlayer();
         Timer timer = new Timer();
 
@@ -57,6 +60,8 @@ namespace midi_parser
             FileStream fs = new FileStream(this.filePath.Text, FileMode.Open); // get filestream for parse midi to hexa
 
             var text = "";
+            string musicHexa = "";
+
             while (fs.Position < fs.Length)
             {
                 Chunk chunk = Chunk.Parse(fs);
@@ -64,6 +69,15 @@ namespace midi_parser
                 if (chunk != null)
                 {
                     text += string.Format("{0} :{1} bytes \r\n", chunk.CTString, chunk.Length);
+
+                    musicHexa = StaticFunc.HexaString(chunk.Buffer);
+
+                    var NH = StaticFunc.NoteToHexa(musicHexa.Trim());
+
+                    for (var i = 0; i < NH.Length; i++)
+                    {
+                        HexaNotes.Add(NH[i]);
+                    }
 
                     if (chunk is Header)
                     {
@@ -73,8 +87,10 @@ namespace midi_parser
                 }
             }
 
-            Console.Write(text);
             midiText.AppendText(text);
+
+            histogram = StaticFunc.Histogram(HexaNotes);
+
 
             fs.Close(); // close stream
         }
@@ -94,6 +110,7 @@ namespace midi_parser
 
         private double currentTime; // current play time
         private int playFlag = 0;
+
         private void btnPlay_Click(object sender, EventArgs e)
         {
             playFlag = 1;
@@ -127,6 +144,12 @@ namespace midi_parser
         private void btnClear_Click(object sender, EventArgs e)
         {
             midiText.Clear();
+        }
+
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            DetailView DV = new DetailView(this);
+            DV.Show();            
         }
     }
 }
