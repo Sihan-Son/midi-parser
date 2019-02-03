@@ -40,6 +40,7 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnDetail = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // midiText
@@ -104,7 +105,7 @@
             this.btnPlay.Image = ((System.Drawing.Image)(resources.GetObject("btnPlay.Image")));
             this.btnPlay.Location = new System.Drawing.Point(13, 497);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(67, 39);
+            this.btnPlay.Size = new System.Drawing.Size(55, 39);
             this.btnPlay.TabIndex = 7;
             this.btnPlay.UseVisualStyleBackColor = true;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
@@ -112,9 +113,9 @@
             // btnStop
             // 
             this.btnStop.Image = ((System.Drawing.Image)(resources.GetObject("btnStop.Image")));
-            this.btnStop.Location = new System.Drawing.Point(163, 497);
+            this.btnStop.Location = new System.Drawing.Point(133, 497);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(67, 39);
+            this.btnStop.Size = new System.Drawing.Size(55, 39);
             this.btnStop.TabIndex = 9;
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
@@ -122,9 +123,9 @@
             // btnPause
             // 
             this.btnPause.Image = ((System.Drawing.Image)(resources.GetObject("btnPause.Image")));
-            this.btnPause.Location = new System.Drawing.Point(89, 497);
+            this.btnPause.Location = new System.Drawing.Point(72, 497);
             this.btnPause.Name = "btnPause";
-            this.btnPause.Size = new System.Drawing.Size(67, 39);
+            this.btnPause.Size = new System.Drawing.Size(55, 39);
             this.btnPause.TabIndex = 8;
             this.btnPause.UseVisualStyleBackColor = true;
             this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
@@ -132,18 +133,29 @@
             // btnClear
             // 
             this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
-            this.btnClear.Location = new System.Drawing.Point(237, 497);
+            this.btnClear.Location = new System.Drawing.Point(191, 497);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(67, 39);
+            this.btnClear.Size = new System.Drawing.Size(55, 39);
             this.btnClear.TabIndex = 10;
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnDetail
+            // 
+            this.btnDetail.Location = new System.Drawing.Point(249, 497);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Size = new System.Drawing.Size(55, 39);
+            this.btnDetail.TabIndex = 11;
+            this.btnDetail.Text = "DV";
+            this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // Midi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(316, 548);
+            this.Controls.Add(this.btnDetail);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnPause);
             this.Controls.Add(this.btnStop);
@@ -178,5 +190,6 @@
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnDetail;
     }
 }

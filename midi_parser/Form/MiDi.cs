@@ -18,6 +18,9 @@ namespace midi_parser
 {
     public partial class Midi : Form
     {
+        public int[] histogram = new int[256];
+        public List<string> HexaNotes = new List<string>();
+        
         WindowsMediaPlayer midiPlayer = new WindowsMediaPlayer();
         Timer timer = new Timer();
 
@@ -58,7 +61,6 @@ namespace midi_parser
 
             var text = "";
             string musicHexa = "";
-            List<string> HexaNotes = new List<string>();
 
             while (fs.Position < fs.Length)
             {
@@ -87,24 +89,8 @@ namespace midi_parser
 
             midiText.AppendText(text);
 
-//            string notesBody = "\r\n";            
-//            for (var i = 0; i < HexaNotes.Count; i++)
-//            {
-//                Console.Write("{0:X2} ", HexaNotes[i]);
-//                notesBody += string.Format("{0:X2} ", HexaNotes[i]);
-//
-//                if ((i + 1) % 14 == 0)
-//                {
-//                    Console.WriteLine();
-//                    notesBody += "\r\n";
-//                }
-//            }
+            histogram = StaticFunc.Histogram(HexaNotes);
 
-//            midiText.AppendText(notesBody);
-
-            int[] histogram = StaticFunc.Histogram(HexaNotes);
-            for (var i = 0; i < histogram.Length; i++)
-                Console.WriteLine(histogram[i]);
 
             fs.Close(); // close stream
         }
@@ -158,6 +144,12 @@ namespace midi_parser
         private void btnClear_Click(object sender, EventArgs e)
         {
             midiText.Clear();
+        }
+
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            DetailView DV = new DetailView(this);
+            DV.Show();            
         }
     }
 }
