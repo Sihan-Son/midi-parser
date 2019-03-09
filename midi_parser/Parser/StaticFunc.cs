@@ -89,5 +89,19 @@ namespace midi_parser
             
             return hexaHistogram;
         }
+
+        public static int[] midiToImage(List<string> list)
+        {
+            List<int> midiImage = new List<int>();
+
+            for (var i = 0; i < list.Count; i++)
+            {
+                midiImage.Add(int.Parse(list[i], System.Globalization.NumberStyles.HexNumber));
+            }
+
+            int[] imageReturn = midiImage.ToArray();
+
+            return imageReturn;
+        }
     }
 }

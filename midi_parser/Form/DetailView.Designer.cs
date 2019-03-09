@@ -37,7 +37,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbHistoDetail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.pbImg = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chHistogram)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImg)).BeginInit();
             this.SuspendLayout();
             // 
             // tbDetailBody
@@ -46,7 +49,7 @@
             this.tbDetailBody.Multiline = true;
             this.tbDetailBody.Name = "tbDetailBody";
             this.tbDetailBody.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbDetailBody.Size = new System.Drawing.Size(309, 619);
+            this.tbDetailBody.Size = new System.Drawing.Size(272, 619);
             this.tbDetailBody.TabIndex = 0;
             // 
             // label1
@@ -62,20 +65,20 @@
             // 
             chartArea2.Name = "ChartArea1";
             this.chHistogram.ChartAreas.Add(chartArea2);
-            this.chHistogram.Location = new System.Drawing.Point(338, 30);
+            this.chHistogram.Location = new System.Drawing.Point(291, 30);
             this.chHistogram.Name = "chHistogram";
-            this.chHistogram.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            this.chHistogram.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series2.ChartArea = "ChartArea1";
             series2.Name = "Series1";
             this.chHistogram.Series.Add(series2);
-            this.chHistogram.Size = new System.Drawing.Size(474, 300);
+            this.chHistogram.Size = new System.Drawing.Size(521, 300);
             this.chHistogram.TabIndex = 2;
             this.chHistogram.Text = "chart1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(338, 12);
+            this.label2.Location = new System.Drawing.Point(291, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 12);
             this.label2.TabIndex = 3;
@@ -83,27 +86,46 @@
             // 
             // tbHistoDetail
             // 
-            this.tbHistoDetail.Location = new System.Drawing.Point(340, 356);
+            this.tbHistoDetail.Location = new System.Drawing.Point(291, 356);
             this.tbHistoDetail.Multiline = true;
             this.tbHistoDetail.Name = "tbHistoDetail";
             this.tbHistoDetail.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbHistoDetail.Size = new System.Drawing.Size(472, 293);
+            this.tbHistoDetail.Size = new System.Drawing.Size(205, 293);
             this.tbHistoDetail.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(340, 337);
+            this.label3.Location = new System.Drawing.Point(291, 337);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 12);
             this.label3.TabIndex = 5;
             this.label3.Text = "Histogram detail";
+            // 
+            // pbImg
+            // 
+            this.pbImg.Location = new System.Drawing.Point(502, 356);
+            this.pbImg.Name = "pbImg";
+            this.pbImg.Size = new System.Drawing.Size(310, 293);
+            this.pbImg.TabIndex = 6;
+            this.pbImg.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(551, 337);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 12);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Image";
             // 
             // DetailView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 661);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.pbImg);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbHistoDetail);
             this.Controls.Add(this.label2);
@@ -114,6 +136,7 @@
             this.Text = "DetailView";
             this.Load += new System.EventHandler(this.DetailView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chHistogram)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,5 +151,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbHistoDetail;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pbImg;
+        private System.Windows.Forms.Label label4;
     }
 }

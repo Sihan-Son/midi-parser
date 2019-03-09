@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using Emgu.CV;
+using Emgu.CV.CvEnum;
+using Emgu.CV.Structure;
 
 namespace midi_parser
 {
@@ -20,7 +23,7 @@ namespace midi_parser
             InitializeComponent();
             this.midi = midi;
         }
-        
+
         string[] Hexa =
         {
             "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "0A", "0B", "0C", "0D", "0E", "0F", "10",
@@ -43,6 +46,8 @@ namespace midi_parser
 
         private void DetailView_Load(object sender, EventArgs e)
         {
+            setMidiImg();
+            
             string notesBody = "";
             for (var i = 0; i < midi.HexaNotes.Count; i++)
             {
@@ -72,11 +77,36 @@ namespace midi_parser
                     continue;
                 HistogramDetail += string.Format("{0}: {1} \r\n", Hexa[i], midi.histogram[i]);
             }
-            
+
             tbHistoDetail.AppendText(HistogramDetail);
+        }
+
+        private void setMidiImg()
+        {
+            int w = 14;
+            int h = Convert.ToInt32(Math.Ceiling(midi.HexaNotes.Count / 14.0));
+            Image<Gray, Byte> img = new Image<Gray, byte>(w, h);
+
+            int[] midiToImg = StaticFunc.midiToImage(midi.HexaNotes);
             
             
-            
+            int y = 0;
+            for (var x = 0; x < midi.HexaNotes.Count; x++)
+            {
+                
+                if ((x + 1) % 14 == 0)
+                {
+                    y += 1;
+                }
+
+                img.Data[y, x % 14, 0] = Convert.ToByte(midiToImg[x]);
+            }
+
+            pbImg.Image = img.ToBitmap();
+
+//            CvInvoke.Imshow("test", img);
+//            CvInvoke.WaitKey(0);
+
         }
     }
 }
