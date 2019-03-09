@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tbDetailBody = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -63,14 +63,14 @@
             // 
             // chHistogram
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chHistogram.ChartAreas.Add(chartArea2);
+            chartArea3.Name = "ChartArea1";
+            this.chHistogram.ChartAreas.Add(chartArea3);
             this.chHistogram.Location = new System.Drawing.Point(291, 30);
             this.chHistogram.Name = "chHistogram";
             this.chHistogram.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series2.ChartArea = "ChartArea1";
-            series2.Name = "Series1";
-            this.chHistogram.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.Name = "Series1";
+            this.chHistogram.Series.Add(series3);
             this.chHistogram.Size = new System.Drawing.Size(521, 300);
             this.chHistogram.TabIndex = 2;
             this.chHistogram.Text = "chart1";
@@ -107,13 +107,14 @@
             this.pbImg.Location = new System.Drawing.Point(502, 356);
             this.pbImg.Name = "pbImg";
             this.pbImg.Size = new System.Drawing.Size(310, 293);
+            this.pbImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImg.TabIndex = 6;
             this.pbImg.TabStop = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(551, 337);
+            this.label4.Location = new System.Drawing.Point(500, 337);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 12);
             this.label4.TabIndex = 7;
