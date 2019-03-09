@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tbDetailBody = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pbImg = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chHistogram)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg)).BeginInit();
             this.SuspendLayout();
@@ -63,14 +64,14 @@
             // 
             // chHistogram
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chHistogram.ChartAreas.Add(chartArea3);
+            chartArea2.Name = "ChartArea1";
+            this.chHistogram.ChartAreas.Add(chartArea2);
             this.chHistogram.Location = new System.Drawing.Point(291, 30);
             this.chHistogram.Name = "chHistogram";
             this.chHistogram.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series3.ChartArea = "ChartArea1";
-            series3.Name = "Series1";
-            this.chHistogram.Series.Add(series3);
+            series2.ChartArea = "ChartArea1";
+            series2.Name = "Series1";
+            this.chHistogram.Series.Add(series2);
             this.chHistogram.Size = new System.Drawing.Size(521, 300);
             this.chHistogram.TabIndex = 2;
             this.chHistogram.Text = "chart1";
@@ -120,11 +121,22 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Image";
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(546, 333);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(59, 21);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // DetailView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 661);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pbImg);
             this.Controls.Add(this.label3);
@@ -154,5 +166,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pbImg;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSave;
     }
 }

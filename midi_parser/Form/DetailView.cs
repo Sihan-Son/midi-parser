@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -107,6 +108,22 @@ namespace midi_parser
 //            CvInvoke.Imshow("test", img);
 //            CvInvoke.WaitKey(0);
 
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Title = "다른 이름으로 저장";
+            dlg.DefaultExt = "jpg";
+            dlg.Filter = "JPEG (*.jpg)|*.jpg|Bitmap (*.bmp)|*.bmp|GIF (*.gif)|*.gif";
+            dlg.FilterIndex = 0;
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                pbImg.Image.Save(dlg.FileName);
+            }
+
+            
         }
     }
 }
