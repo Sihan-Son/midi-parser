@@ -25,6 +25,93 @@ namespace midi_parser
             this.midi = midi;
         }
 
+
+        private void DetailView_Load(object sender, EventArgs e)
+        {
+            setMidiImg();
+            setHistogram();
+            setDetailBody();
+        }
+
+        private void setMidiImg()
+        //set Midi img in pictureBox bitmap format img made by EMGUCV  
+        {
+            int w = 14;
+            int h = Convert.ToInt32(Math.Ceiling(midi.HexaNotes.Count / 14.0));
+            Image<Gray, Byte> img = new Image<Gray, byte>(w, h);
+
+            int[] midiToImg = StaticFunc.midiToImage(midi.HexaNotes);
+            
+            int y = 0;
+            for (var x = 0; x < midi.HexaNotes.Count; x++)
+            {
+                
+                if ((x + 1) % 14 == 0)
+                {
+                    y += 1;
+                }
+
+                img.Data[y, x % 14, 0] = Convert.ToByte(midiToImg[x]);
+            }
+
+            pbImg.Image = img.ToBitmap();
+        }
+
+        private void setHistogram()
+        //set histogram without 0 zero value hexa data
+        {
+            chHistogram.Series["Series1"].Points.Clear();
+            for (var i = 0; i < midi.histogram.Length; i++)
+            {
+                if (midi.histogram[i] == 0)
+                    continue;
+                chHistogram.Series["Series1"].Points.AddXY(Hexa[i], midi.histogram[i]);
+            }
+
+            string HistogramDetail = "0 value is skip \r\n";
+            for (var i = 0; i < midi.histogram.Length; i++)
+            {
+                if (midi.histogram[i] == 0)
+                    continue;
+                HistogramDetail += string.Format("{0}: {1} \r\n", Hexa[i], midi.histogram[i]);
+            }
+
+            tbHistoDetail.AppendText(HistogramDetail);
+        }
+
+        private void setDetailBody()
+        // print hexa code of midi file
+        {
+            string notesBody = "";
+            for (var i = 0; i < midi.HexaNotes.Count; i++)
+            {
+                notesBody += string.Format("{0,3}", midi.HexaNotes[i]);
+
+                if ((i + 1) % 14 == 0)
+                {
+                    notesBody += "\r\n";
+                }
+            }
+
+            this.tbDetailBody.AppendText(notesBody);
+
+        }
+        
+        private void btnSave_Click(object sender, EventArgs e)
+        // save hexa code img to jpg format
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "다른 이름으로 저장";
+            saveFileDialog.DefaultExt = "jpg";
+            saveFileDialog.Filter = "JPEG (*.jpg)|*.jpg|Bitmap (*.bmp)|*.bmp|GIF (*.gif)|*.gif";
+            saveFileDialog.FilterIndex = 0;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pbImg.Image.Save(saveFileDialog.FileName);
+            }    
+        }
+        
         string[] Hexa =
         {
             "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "0A", "0B", "0C", "0D", "0E", "0F", "10",
@@ -45,85 +132,5 @@ namespace midi_parser
             "FF"
         };
 
-        private void DetailView_Load(object sender, EventArgs e)
-        {
-            setMidiImg();
-            
-            string notesBody = "";
-            for (var i = 0; i < midi.HexaNotes.Count; i++)
-            {
-                notesBody += string.Format("{0,3}", midi.HexaNotes[i]);
-
-                if ((i + 1) % 14 == 0)
-                {
-                    notesBody += "\r\n";
-                }
-            }
-
-            this.tbDetailBody.AppendText(notesBody);
-
-
-            chHistogram.Series["Series1"].Points.Clear();
-            for (var i = 0; i < midi.histogram.Length; i++)
-            {
-                if (midi.histogram[i] == 0)
-                    continue;
-                chHistogram.Series["Series1"].Points.AddXY(Hexa[i], midi.histogram[i]);
-            }
-
-            string HistogramDetail = "0 value is skip \r\n";
-            for (var i = 0; i < midi.histogram.Length; i++)
-            {
-                if (midi.histogram[i] == 0)
-                    continue;
-                HistogramDetail += string.Format("{0}: {1} \r\n", Hexa[i], midi.histogram[i]);
-            }
-
-            tbHistoDetail.AppendText(HistogramDetail);
-        }
-
-        private void setMidiImg()
-        {
-            int w = 14;
-            int h = Convert.ToInt32(Math.Ceiling(midi.HexaNotes.Count / 14.0));
-            Image<Gray, Byte> img = new Image<Gray, byte>(w, h);
-
-            int[] midiToImg = StaticFunc.midiToImage(midi.HexaNotes);
-            
-            
-            int y = 0;
-            for (var x = 0; x < midi.HexaNotes.Count; x++)
-            {
-                
-                if ((x + 1) % 14 == 0)
-                {
-                    y += 1;
-                }
-
-                img.Data[y, x % 14, 0] = Convert.ToByte(midiToImg[x]);
-            }
-
-            pbImg.Image = img.ToBitmap();
-
-//            CvInvoke.Imshow("test", img);
-//            CvInvoke.WaitKey(0);
-
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog dlg = new SaveFileDialog();
-            dlg.Title = "다른 이름으로 저장";
-            dlg.DefaultExt = "jpg";
-            dlg.Filter = "JPEG (*.jpg)|*.jpg|Bitmap (*.bmp)|*.bmp|GIF (*.gif)|*.gif";
-            dlg.FilterIndex = 0;
-
-            if (dlg.ShowDialog() == DialogResult.OK)
-            {
-                pbImg.Image.Save(dlg.FileName);
-            }
-
-            
-        }
     }
 }

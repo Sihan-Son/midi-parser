@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tbDetailBody = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -50,7 +50,7 @@
             this.tbDetailBody.Multiline = true;
             this.tbDetailBody.Name = "tbDetailBody";
             this.tbDetailBody.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbDetailBody.Size = new System.Drawing.Size(272, 619);
+            this.tbDetailBody.Size = new System.Drawing.Size(314, 619);
             this.tbDetailBody.TabIndex = 0;
             // 
             // label1
@@ -64,14 +64,14 @@
             // 
             // chHistogram
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chHistogram.ChartAreas.Add(chartArea2);
-            this.chHistogram.Location = new System.Drawing.Point(291, 30);
+            chartArea1.Name = "ChartArea1";
+            this.chHistogram.ChartAreas.Add(chartArea1);
+            this.chHistogram.Location = new System.Drawing.Point(336, 30);
             this.chHistogram.Name = "chHistogram";
             this.chHistogram.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series2.ChartArea = "ChartArea1";
-            series2.Name = "Series1";
-            this.chHistogram.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Name = "Series1";
+            this.chHistogram.Series.Add(series1);
             this.chHistogram.Size = new System.Drawing.Size(521, 300);
             this.chHistogram.TabIndex = 2;
             this.chHistogram.Text = "chart1";
@@ -79,7 +79,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(291, 15);
+            this.label2.Location = new System.Drawing.Point(334, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 12);
             this.label2.TabIndex = 3;
@@ -87,7 +87,7 @@
             // 
             // tbHistoDetail
             // 
-            this.tbHistoDetail.Location = new System.Drawing.Point(291, 356);
+            this.tbHistoDetail.Location = new System.Drawing.Point(335, 352);
             this.tbHistoDetail.Multiline = true;
             this.tbHistoDetail.Name = "tbHistoDetail";
             this.tbHistoDetail.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -97,7 +97,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(291, 337);
+            this.label3.Location = new System.Drawing.Point(333, 337);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 12);
             this.label3.TabIndex = 5;
@@ -105,7 +105,7 @@
             // 
             // pbImg
             // 
-            this.pbImg.Location = new System.Drawing.Point(502, 356);
+            this.pbImg.Location = new System.Drawing.Point(546, 352);
             this.pbImg.Name = "pbImg";
             this.pbImg.Size = new System.Drawing.Size(310, 293);
             this.pbImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -115,7 +115,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(500, 337);
+            this.label4.Location = new System.Drawing.Point(544, 337);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 12);
             this.label4.TabIndex = 7;
@@ -123,7 +123,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(546, 333);
+            this.btnSave.Location = new System.Drawing.Point(605, 333);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(59, 21);
             this.btnSave.TabIndex = 8;
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 661);
+            this.ClientSize = new System.Drawing.Size(869, 661);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pbImg);

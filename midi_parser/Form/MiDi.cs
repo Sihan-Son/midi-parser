@@ -22,7 +22,7 @@ namespace midi_parser
         public List<string> HexaNotes = new List<string>();
         
         WindowsMediaPlayer midiPlayer = new WindowsMediaPlayer();
-        Timer timer = new Timer();
+//        Timer timer = new Timer();
 
         public Midi()
         {
@@ -31,7 +31,7 @@ namespace midi_parser
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            timer.Interval = 1000;
+//            timer.Interval = 1000;
         }
 
         private void fnBtn_Click(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace midi_parser
 
             midiText.AppendText(text);
 
-            histogram = StaticFunc.Histogram(HexaNotes);
+            histogram = StaticFunc.Histogram(HexaNotes); // using in detail view's set Histogram
 
 
             fs.Close(); // close stream
@@ -97,6 +97,7 @@ namespace midi_parser
 
 
         private static string ViewHeader(Header header)
+        // show detail of header
         {
             string contents = "\r\n===Header Chunk===\r\n";
             contents += string.Format(StaticFunc.HexaString(header.Buffer) + "\r\n");
@@ -109,11 +110,12 @@ namespace midi_parser
 
 
         private double currentTime; // current play time
-        private int playFlag = 0;
+//        private int playFlag = 0;
 
         private void btnPlay_Click(object sender, EventArgs e)
+        // play midi
         {
-            playFlag = 1;
+//            playFlag = 1;
             midiPlayer.controls.currentPosition = currentTime;
             try
             {
@@ -126,22 +128,25 @@ namespace midi_parser
         }
 
         private void btnStop_Click(object sender, EventArgs e)
+         // stop playing midi
         {
-            playFlag = 0;
+//            playFlag = 0;
             midiPlayer.controls.stop();
             currentTime = 0;
             midiPlayer.close(); // 파일 점유 해제
         }
 
         private void btnPause_Click(object sender, EventArgs e)
+        // pause playing midi
         {
-            playFlag = 0;
+//            playFlag = 0;
             currentTime = midiPlayer.controls.currentPosition;
             midiPlayer.controls.pause();
             midiPlayer.close(); // 파일 점유 해제
         }
 
         private void btnClear_Click(object sender, EventArgs e)
+        // delete every chars in text box
         {
             midiText.Clear();
         }
